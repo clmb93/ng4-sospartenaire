@@ -1,0 +1,24 @@
+<div class="connexion" align="center" [ngStyle]="{'height.px':heightWindows}">
+  <div class="container col-lg-5 formulaire">
+    <h1>Sos Partenaire</h1>
+    <br><br>
+    <div class="form-group row">
+      <label class="col-4 col-form-label" align="left">Login</label>
+      <div class="col-lg-8">
+        <input  [(ngModel)] = "connexionAttempt.log"  [ngClass]="{'invalid': logVerif==false}" class="form-control" type="text"  (blur)="verifLog()">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-4 col-form-label" align="left">Mot de passe</label>
+      <div class="col-lg-8">
+        <input  [(ngModel)] = "connexionAttempt.password"  [ngClass]="{'invalid': passwordVerif==false}" class="form-control" type="password"  (blur)="verifPassword()">
+      </div>
+    </div>
+    <div class="form-group row">
+      <a routerLink="" class="link">Pas de compte ? inscrivez-vous</a>
+    </div>
+    <div class="offset-lg-1 col-lg-4">
+      <button class="btn btn-block btn-envoie" (click)="verificationForm()">Connexion</button>
+    </div>
+  </div>
+</div>

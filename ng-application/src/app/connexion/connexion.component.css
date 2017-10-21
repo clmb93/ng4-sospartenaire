@@ -1,0 +1,54 @@
+.connexion{
+
+  min-width: 500px;
+  min-height: 200px;
+  padding: 20px;
+  padding-top: 100px;
+  z-index: 0;
+  background: url('../../assets/img/bg-connexion.jpg') no-repeat center;
+  background-size: cover;
+}
+
+
+.formulaire{
+
+  opacity: 0.9;
+  background-color: #C6D2D8;
+  padding: 20px;
+}
+
+.link,button,h1,label{
+  font-family: 'Averia Libre', cursive;
+}
+
+input{
+
+  border-radius: 20px;
+  padding-left: 20px;
+}
+
+label{
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.link{
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 15px;
+}
+
+.btn-envoie{
+
+  border-radius: 50px;
+  font-weight: bolder;
+  font-size: 20px;
+  background-color: white;
+}
+
+.btn-envoie:hover{ cursor:  pointer; border: 1px solid #97AFCA; }
+
+.invalid{
+
+  border: 1px solid red;
+}
