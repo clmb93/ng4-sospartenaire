@@ -6,6 +6,7 @@ import { Routes, RouterModule} from '@angular/router';
 import { ContainerComponent } from './container/container.component';
 import { NgModel,FormsModule } from '@angular/forms';
 import {ConnectService} from './connect.service';
+import { HttpModule } from '@angular/http';
 
 const appRoutes:Routes = [
   { path : '' , redirectTo : '/accueil', pathMatch: 'full'},
@@ -21,7 +22,8 @@ const appRoutes:Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpModule
   ],
   providers: [ConnectService],
   bootstrap: [AppComponent]
