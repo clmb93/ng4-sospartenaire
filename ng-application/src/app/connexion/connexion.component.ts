@@ -18,6 +18,9 @@ export class ConnexionComponent implements OnInit {
   private verificationForm(){ //Fonction de verification du formulaire
     this.verifLog();
     this.verifPassword();
+    if(this.logVerif==true && this.passwordVerif == true){
+      
+    }
 
   }
 
