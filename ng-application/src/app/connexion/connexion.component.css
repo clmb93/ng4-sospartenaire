@@ -17,7 +17,7 @@
   padding: 20px;
 }
 
-.link,button,h1,label{
+.link,button,h1,label,p{
   font-family: 'Averia Libre', cursive;
 }
 
@@ -35,6 +35,11 @@ label{
 .link{
   text-decoration: none;
   margin-left: 15px;
+  font-size: 15px;
+}
+
+.connectionAttempt{
+  text-decoration: none;
   font-size: 15px;
 }
 

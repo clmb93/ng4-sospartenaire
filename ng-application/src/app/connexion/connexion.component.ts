@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConnexionAttempt} from './ConnexionAttempt';
 import { ConnectService } from './../connect.service';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/delay';
 
 
 @Component({
@@ -19,13 +20,22 @@ export class ConnexionComponent implements OnInit {
   passwordVerif:boolean = true;
   logInfo:string = "";
   mdpInfo:string = "";
+  connexionEncour:boolean = false;
+  serveurResponse:string="";
+
   private verificationForm(){ //Fonction de verification du formulaire
     this.verifLog();
     this.verifPassword();
     if(this.logVerif==true && this.passwordVerif == true){
+        this.connexionEncour = true;
         this.serviceConnect.ConnexionEtablishingAttempt(this.connexionAttempt) //On invoque la méthode post du service
         .map(data => data.json())
-        .subscribe(data => { console.log(data)}); //Ensuite on souscrit et on affiche la réponse du serveur
+        .delay(2000)
+        .subscribe(message => {
+            this.connexionEncour = false;
+            this.serveurResponse = message;
+
+        }); //Ensuite on souscrit et on affiche la réponse du serveur
     }
 
   }

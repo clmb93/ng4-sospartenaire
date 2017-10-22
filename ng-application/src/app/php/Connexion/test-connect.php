@@ -1,6 +1,26 @@
 <?php
+require __DIR__.'/../Cryptage/Cryptage.php';
+require __DIR__.'/../App/App.php';
 header("Access-Control-Allow-Origin: *");
-echo json_encode("connexionInfo");
+
+/* Récupération des données envoyées par angular 4 */
+
+$postdata = file_get_contents("php://input");
+$data = json_decode($postdata);
+$message  = ""; 
+$log  = $data->log;
+$mdp  = $data->password;
+$query = "Select * from user where log_user = ?";
+$res = App::getDb()->query($query,array($log)); //requete de corresponance ou non
+if($res){  
+    $validPassword = password_verify($mdp, $res[0]['mdp_user']);
+    if($validPassword){
+         $message = "Connexion reussi";    
+        }else $message = "Mot de passe inconnu";
+    }else $message = "Login inconnu";
+    
+echo json_encode($message);
+
 
 
 

@@ -17,7 +17,13 @@
       <p class="col-12 col-form-label" align="left" style="color:red;">{{mdpInfo}}</p>
     </div>
     <div class="form-group row">
-      <a routerLink="" class="link">Pas de compte ? inscrivez-vous</a>
+      <a routerLink="" class="link">Pas de compte ? inscrivez-vous </a>
+    </div>
+    <div *ngIf="connexionEncour"class="form-group row connectionAttempt">
+      <img src="../../assets/img/loader.gif" style="width:20px;height:20px;"><p>Tentative de connexion en cours</p>
+    </div>
+    <div *ngIf="!connexionEncour && serveurResponse.length>0"class="form-group row connectionAttempt">
+      <p>{{serveurResponse}}</p>
     </div>
     <div class="offset-lg-1 col-lg-4">
       <button class="btn btn-block btn-envoie" (click)="verificationForm()">Connexion</button>
