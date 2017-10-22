@@ -39,6 +39,7 @@ label{
 }
 
 .connectionAttempt{
+    margin-left: 1px;
   text-decoration: none;
   font-size: 15px;
 }
