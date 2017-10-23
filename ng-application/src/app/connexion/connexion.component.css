@@ -1,12 +1,13 @@
 .connexion{
 
-  min-width: 500px;
+  min-width: 600px;
   min-height: 200px;
   padding: 20px;
   padding-top: 100px;
   z-index: 0;
-  background: url('../../assets/img/bg-connexion.jpg') no-repeat center;
+  background: url('../../assets/img/bg-connexion.jpg') no-repeat 0px 0px;
   background-size: cover;
+  background-position: center;
 }
 
 
@@ -57,4 +58,26 @@ label{
 .invalid{
 
   border: 1px solid red;
+}
+
+@media (max-height:600px) {
+
+  .connexion{
+
+    padding-top: 10px;
+
+  }
+
+
+}
+
+@media (max-height:400px) {
+
+  .connexion{
+
+    background: #C6D2D8;
+
+  }
+
+
 }
