@@ -16,10 +16,14 @@ export class ConnexionComponent implements OnInit {
 
   heightWindows:number = 0;
   connexionAttempt:ConnexionAttempt = new ConnexionAttempt("","");
+
   logVerif:boolean = true;
   passwordVerif:boolean = true;
+
   logInfo:string = "";
   mdpInfo:string = "";
+
+
   connexionEncour:boolean = false;
   serveurResponse:string="";
 
@@ -31,9 +35,28 @@ export class ConnexionComponent implements OnInit {
         this.serviceConnect.ConnexionEtablishingAttempt(this.connexionAttempt) //On invoque la méthode post du service
         .map(data => data.json())
         .delay(2000)
-        .subscribe(message => {
+        .subscribe(data => {
             this.connexionEncour = false;
-            this.serveurResponse = message;
+            this.serveurResponse = data[1];
+            console.log(this.serveurResponse);
+            switch(this.serveurResponse){
+
+              case "Login inconnu" :
+                this.logInfo = "Login iconnu";
+                this.logVerif = false;
+              break;
+
+              case "Mot de passe inconnu" :
+                this.mdpInfo = "Mot de passe inconnu";
+                this.passwordVerif = false;
+              break;
+
+              case "Connexion reussie" :
+                let id_user = data[2];
+
+              break;
+
+            }
 
         }); //Ensuite on souscrit et on affiche la réponse du serveur
     }
