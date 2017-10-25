@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Output, EventEmitter } from '@angular/core';
 import { ConnexionAttempt} from './ConnexionAttempt';
 import { ConnectService } from './../connect.service';
 import 'rxjs/add/operator/map';
@@ -14,6 +14,8 @@ export class ConnexionComponent implements OnInit {
 
   constructor(private serviceConnect:ConnectService) { }
 
+
+  @Output() connexionEtablie:EventEmitter<any> = new EventEmitter();
   heightWindows:number = 0;
   connexionAttempt:ConnexionAttempt = new ConnexionAttempt("","");
 
@@ -52,7 +54,7 @@ export class ConnexionComponent implements OnInit {
 
               case "Connexion reussie" :
                 let id_user = data[2];
-
+                this.connexionEtablie.emit({id_user : id_user});
               break;
 
             }
