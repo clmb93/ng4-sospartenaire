@@ -18,6 +18,5 @@ export class AppComponent {
   connexionEtablie($event){
     this.isCo = true;
     this.id_user = $event.id_user;
-    document.write(""+this.id_user);
   }
 }
