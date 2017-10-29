@@ -1,4 +1,4 @@
 <!-- * Contient tout les composants du site * -->
 
 <app-connexion *ngIf="isCo==false" (connexionEtablie)="connexionEtablie($event);"></app-connexion> <!--Si la connection n'est pas encore établie -->
-<app-container *ngIf="isCo==true"></app-container>  <!--Une fois connecté-->
+<app-container *ngIf="isCo==true" idUser="id_user"></app-container>  <!--Une fois connecté-->

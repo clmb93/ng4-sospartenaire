@@ -6,6 +6,7 @@ import { Routes, RouterModule} from '@angular/router';
 import { ContainerComponent } from './container/container.component';
 import { NgModel,FormsModule } from '@angular/forms';
 import {ConnectService} from './connect.service';
+import {UtilisateursService} from './utilisateurs.service';
 import { HttpModule } from '@angular/http';
 
 const appRoutes:Routes = [
@@ -25,7 +26,7 @@ const appRoutes:Routes = [
     RouterModule.forRoot(appRoutes),
     HttpModule
   ],
-  providers: [ConnectService],
+  providers: [ConnectService,UtilisateursService],
   bootstrap: [AppComponent]
 })
 
