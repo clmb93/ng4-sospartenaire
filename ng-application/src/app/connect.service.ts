@@ -11,10 +11,7 @@ export class ConnectService {
   constructor(private http:Http) { }
 
   public ConnexionEtablishingAttempt(connexionInfo):Observable<any>{  //post method
-    let bodyString = JSON.stringify(connexionInfo); //On transforme les données en JSON
-    let headers = new Headers({'Content-Type':'application/json'}); //On définit le header
-    let options = new RequestOptions({headers:headers}); //On crée les options à partir du header
-    return this.http.post(url, bodyString); //On retourne la réponse du serveur
+    return this.http.get(url+"?log="+connexionInfo.getLog()+"&mdp="+connexionInfo.getPassword());
 
   }
 

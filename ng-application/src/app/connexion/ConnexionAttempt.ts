@@ -10,7 +10,7 @@ export class ConnexionAttempt{
 
 
   /* Getters */
-  
+
   public getPassword():string{
     return this.password;
   }

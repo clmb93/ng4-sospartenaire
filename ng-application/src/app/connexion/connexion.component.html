@@ -30,8 +30,6 @@
     <div *ngIf="connexionEncour"class="form-group row connectionAttempt">
       <img src="../../assets/img/loader.gif" style="width:20px;height:20px;"><p>Tentative de connexion en cours</p>
     </div>
-    <div *ngIf="!connexionEncour && serveurResponse.length>0"class="form-group row connectionAttempt">
-    </div>
     <div class="offset-lg-1 col-lg-4">
       <button class="btn btn-block btn-envoie" (click)="verificationForm()">Connexion</button>
     </div>

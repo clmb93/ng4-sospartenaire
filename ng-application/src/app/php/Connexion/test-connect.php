@@ -1,15 +1,21 @@
 <?php
 require __DIR__.'/../Cryptage/Cryptage.php';
 require __DIR__.'/../App/App.php';
-header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin :*");
+header("Access-Control-Allow-Origin :*");
+header("Access-Control-Allow-Methods : GET,HEAD,OPTIONS,POST,PUT");
+header("Access-Control-Allow-Headers : Origin, X-Requested-With, Content-Type, Accept, Authorization");
 
 /* Récupération des données envoyées par angular 4 */
 $id = 0;
-$postdata = file_get_contents("php://input");
-$data = json_decode($postdata);
+if(isset($_GET['log']) && isset($_GET['mdp'])){
+    $log = $_GET['log'];
+    $mdp = $_GET['mdp'];
+}else{
+    $log = "";
+    $mdp = "";
+}
 $message  = "";
-$log  = $data->log;
-$mdp  = $data->password;
 $query = "Select * from user where log_user = ?";
 $res = App::getDb()->query($query,array($log)); //requete de corresponance ou non
 if($res){
@@ -23,8 +29,6 @@ $data = array(
   1 =>$message,
   2=>$id);
 echo json_encode($data);
-
-
 
 
 ?>

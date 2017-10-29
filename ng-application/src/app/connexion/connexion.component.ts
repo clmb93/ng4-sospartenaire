@@ -39,7 +39,6 @@ export class ConnexionComponent implements OnInit {
         .subscribe(data => {
             this.connexionEncour = false;
             this.serveurResponse = data[1];
-            console.log(this.serveurResponse);
             switch(this.serveurResponse){
 
               case "Login inconnu" :
