@@ -39,7 +39,6 @@ export class ConnexionComponent implements OnInit {
         },10000);
         this.serviceConnect.ConnexionEtablishingAttempt(this.connexionAttempt) //On invoque la méthode post du service
         .map(data => data.json())
-        .delay(50000)
         .subscribe(data => {
             this.connexionEncour = false;
             this.serveurResponse = data[1];
