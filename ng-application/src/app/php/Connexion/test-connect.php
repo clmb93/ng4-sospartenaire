@@ -1,16 +1,14 @@
 <?php
 require __DIR__.'/../Cryptage/Cryptage.php';
 require __DIR__.'/../App/App.php';
-header("Access-Control-Allow-Origin :*");
-header("Access-Control-Allow-Origin :*");
-header("Access-Control-Allow-Methods : GET,HEAD,OPTIONS,POST,PUT");
-header("Access-Control-Allow-Headers : Origin, X-Requested-With, Content-Type, Accept, Authorization");
 
 /* Récupération des données envoyées par angular 4 */
 $id = 0;
 if(isset($_GET['log']) && isset($_GET['mdp'])){
     $log = $_GET['log'];
     $mdp = $_GET['mdp'];
+    //header("Content-type:application/json");
+     header("Access-Control-Allow-Origin: *");
 }else{
     $log = "";
     $mdp = "";
