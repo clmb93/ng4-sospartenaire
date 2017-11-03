@@ -16,14 +16,14 @@ export class ConnexionComponent implements OnInit {
 
 
   @Output() connexionEtablie:EventEmitter<any> = new EventEmitter();
+
   heightWindows:number = 0;
   connexionAttempt:ConnexionAttempt = new ConnexionAttempt("","");
-
   logVerif:boolean = true;
   passwordVerif:boolean = true;
-
   logInfo:string = "";
   mdpInfo:string = "";
+  infoConnexion:string = "Tentative de connexion en cours";
 
 
   connexionEncour:boolean = false;
@@ -34,8 +34,12 @@ export class ConnexionComponent implements OnInit {
     this.verifPassword();
     if(this.logVerif==true && this.passwordVerif == true){
         this.connexionEncour = true;
+        setTimeout(()=>{
+            this.infoConnexion = "La connexion est anormalement longue";
+        },10000);
         this.serviceConnect.ConnexionEtablishingAttempt(this.connexionAttempt) //On invoque la méthode post du service
         .map(data => data.json())
+        .delay(50000)
         .subscribe(data => {
             this.connexionEncour = false;
             this.serveurResponse = data[1];
