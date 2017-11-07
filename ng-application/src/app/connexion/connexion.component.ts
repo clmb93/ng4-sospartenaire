@@ -23,21 +23,20 @@ export class ConnexionComponent implements OnInit {
   passwordVerif:boolean = true;
   logInfo:string = "";
   mdpInfo:string = "";
-  infoConnexion:string = "Tentative de connexion en cours";
-
-
+  infoConnexion:string = "";
   connexionEncour:boolean = false;
   serveurResponse:string="";
 
-  private verificationForm(){ //Fonction de verification du formulaire
+  private verificationForm(){ //Fonction de verification du formulaire et d'envoie du form avec récupération de la réponse du serveur
     this.verifLog();
     this.verifPassword();
     if(this.logVerif==true && this.passwordVerif == true){
+        this.infoConnexion = "Tentative de connexion en cours";
         this.connexionEncour = true;
         setTimeout(()=>{
             this.infoConnexion = "La connexion est anormalement longue";
         },10000);
-        this.serviceConnect.ConnexionEtablishingAttempt(this.connexionAttempt) //On invoque la méthode post du service
+        this.serviceConnect.ConnexionEtablishingAttempt(this.connexionAttempt)
         .map(data => data.json())
         .subscribe(data => {
             this.connexionEncour = false;
@@ -61,7 +60,7 @@ export class ConnexionComponent implements OnInit {
 
             }
 
-        }); //Ensuite on souscrit et on affiche la réponse du serveur
+        });
     }
 
   }
