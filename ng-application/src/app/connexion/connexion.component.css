@@ -51,6 +51,7 @@ label{
   font-weight: bolder;
   font-size: 20px;
   background-color: white;
+  min-width: 150px;
 }
 
 .btn-envoie:hover{ cursor:  pointer; border: 1px solid #97AFCA; }
@@ -59,6 +60,24 @@ label{
 
   border: 1px solid red;
 }
+
+
+@media (max-width:1200px) {
+
+  .connexion{
+
+    width: 100%;
+    min-height: 450px;
+    padding: 20px;
+    padding-top: 100px;
+    z-index: 0;
+    background-color: #C6D2D8;
+  }
+
+
+}
+
+
 
 @media (max-height:600px) {
 
