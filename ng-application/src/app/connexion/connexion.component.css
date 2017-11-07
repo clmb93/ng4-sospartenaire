@@ -1,6 +1,8 @@
 .connexion{
 
+position: absolute;
   min-width: 600px;
+  width: 100%;
   min-height: 200px;
   padding: 20px;
   padding-top: 100px;
@@ -8,10 +10,36 @@
   background: url('../../assets/img/bg-connexion.jpg') no-repeat 0px 0px;
   background-size: cover;
   background-position: center;
+  display: none;
+}
+
+.inscription{
+
+  min-width: 600px;
+  width: 100%;
+  min-height: 200px;
+  padding: 20px;
+  padding-top: 100px;
+  z-index: 0;
+
 }
 
 
 .formulaire{
+  opacity: 0.9;
+  background-color: #C6D2D8;
+  padding: 20px;
+}
+
+.formulaire_inscription{
+  overflow-y: auto;
+  opacity: 0.9;
+  background-color: #C6D2D8;
+  padding: 20px;
+}
+
+
+.formulaire_inscription{
 
   opacity: 0.9;
   background-color: #C6D2D8;
@@ -64,10 +92,10 @@ label{
 
 @media (max-width:1200px) {
 
-  .connexion{
+  .connexion,.inscription{
 
     width: 100%;
-    min-height: 450px;
+    min-height: 500px;
     padding: 20px;
     padding-top: 100px;
     z-index: 0;
@@ -81,7 +109,7 @@ label{
 
 @media (max-height:600px) {
 
-  .connexion{
+  .connexion,.inscription{
 
     padding-top: 10px;
 
@@ -92,7 +120,7 @@ label{
 
 @media (max-height:400px) {
 
-  .connexion{
+  .connexion,.inscription{
 
     background: #C6D2D8;
 

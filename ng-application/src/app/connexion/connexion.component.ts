@@ -84,6 +84,11 @@ export class ConnexionComponent implements OnInit {
     }
   }
 
+  private RedirectToInscription(){
+
+
+  }
+
   ngOnInit() {
 
     this.heightWindows = window.innerHeight;
