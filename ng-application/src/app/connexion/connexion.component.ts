@@ -26,8 +26,10 @@ export class ConnexionComponent implements OnInit {
   infoConnexion:string = "";
   connexionEncour:boolean = false;
   serveurResponse:string="";
+  page:string = "connexion";
 
-  private verificationForm(){ //Fonction de verification du formulaire et d'envoie du form avec récupération de la réponse du serveur
+  private verificationForm(){
+    //Fonction de verification du formulaire et d'envoie du form avec récupération de la réponse du serveur
     this.verifLog();
     this.verifPassword();
     if(this.logVerif==true && this.passwordVerif == true){
@@ -84,10 +86,8 @@ export class ConnexionComponent implements OnInit {
     }
   }
 
-  private RedirectToInscription(){
-
-
-  }
+  private RedirectToInscription(){  this.page = "inscription";  }
+  private RedirectToConnexion(){  this.page = "connexion";  }
 
   ngOnInit() {
 
