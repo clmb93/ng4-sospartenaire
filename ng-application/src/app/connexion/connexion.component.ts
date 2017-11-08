@@ -26,7 +26,6 @@ export class ConnexionComponent implements OnInit {
   infoConnexion:string = "";
   connexionEncour:boolean = false;
   serveurResponse:string="";
-  page:string = "connexion";
 
   private verificationForm(){
     //Fonction de verification du formulaire et d'envoie du form avec récupération de la réponse du serveur
@@ -86,8 +85,8 @@ export class ConnexionComponent implements OnInit {
     }
   }
 
-  private RedirectToInscription(){  this.page = "inscription";  }
-  private RedirectToConnexion(){  this.page = "connexion";  }
+  private RedirectToInscription(){    }
+  private RedirectToConnexion(){   }
 
   ngOnInit() {
 
