@@ -1,6 +1,5 @@
 .connexion{
 
-position: absolute;
   min-width: 600px;
   width: 100%;
   min-height: 200px;
@@ -13,19 +12,7 @@ position: absolute;
 
 }
 
-.inscription{
 
-  min-width: 600px;
-  width: 100%;
-  min-height: 200px;
-  padding: 20px;
-  padding-top: 100px;
-  z-index: 0;
-  background: url('../../assets/img/bg-inscription.jpg') no-repeat 0px 0px;
-  background-size: cover;
-  background-position: center;
-
-}
 
 .formulaire{
   opacity: 0.9;

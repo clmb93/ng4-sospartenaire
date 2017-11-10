@@ -1,6 +1,6 @@
 <!--Partie Connexion -->
 <div class="connexion" align="center" [ngStyle]="{'height.px':heightWindows}" >
-  <div class="container col-lg-5 formulaire">
+  <div class="container col-lg-5 formulaire" [ngStyle]="!connexion && {'display':'none'}">
     <h1>Sos Partenaire</h1>
     <br><br>
     <div class="form-group row">
@@ -35,10 +35,7 @@
       <button class="btn btn-block btn-envoie" (click)="verificationForm()">Connexion</button>
     </div>
   </div>
-</div>
-<!--Partie Connexion -->
-<div class="inscription" align="center" [ngStyle]="{'height.px':heightWindows}">
-  <div class="container col-lg-5 formulaire_inscription">
+  <div class="container col-lg-5 formulaire_inscription" [ngStyle]="!inscription && {'display':'none'}">
     <h1>Inscription</h1>
     <br><br>
     <div class="form-group row">

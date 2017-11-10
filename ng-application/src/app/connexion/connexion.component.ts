@@ -26,6 +26,8 @@ export class ConnexionComponent implements OnInit {
   infoConnexion:string = "";
   connexionEncour:boolean = false;
   serveurResponse:string="";
+  inscription:boolean = false;
+  connexion:boolean = true;
 
   private verificationForm(){
     //Fonction de verification du formulaire et d'envoie du form avec récupération de la réponse du serveur
@@ -85,8 +87,15 @@ export class ConnexionComponent implements OnInit {
     }
   }
 
-  private RedirectToInscription(){    }
-  private RedirectToConnexion(){   }
+  private RedirectToInscription(){
+      this.inscription = true;
+      this.connexion = false;
+    }
+
+  private RedirectToConnexion(){
+    this.inscription = false;
+    this.connexion = true;  
+  }
 
   ngOnInit() {
 
